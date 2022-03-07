@@ -14,27 +14,19 @@ const initialState ={
 }
 
 const createNewTodo = (name) =>{
-  return {
-    name,
-    completed:false,
-    id:new Date().getMilliseconds()
-  }
+  return {name,completed:false,id:new Date().getMilliseconds()}
 }
 
 
 export default class App extends React.Component {
    state = initialState
 
-  onChange = (evt) => {
-    this.setState({...this.state,todoText:evt.target.value})
-  }
+  onChange = (evt) => this.setState({...this.state,todoText:evt.target.value})
 
   addTodo = (evt) => {
     const {todos, todoText} = this.state
     this.setState({
-      ...this.state, 
-      todos: [...todos,createNewTodo(todoText)],
-      todoText:''
+      ...this.state, todos: [...todos,createNewTodo(todoText)], todoText:''
     })
   }
 
@@ -56,7 +48,11 @@ export default class App extends React.Component {
     const {todos,todoText,hidingCompleted} = this.state;
     return (
       <div>
-        <TodoList hidingCompleted={hidingCompleted} todos={todos} toggleCompleted={this.toggleCompleted}/>
+        <TodoList 
+          hidingCompleted={hidingCompleted}
+          todos={todos} 
+          toggleCompleted={this.toggleCompleted}
+          />
         <TodoFrom 
           onChange={this.onChange} 
             todoText={todoText}

@@ -3,7 +3,7 @@ import Todo from './Todo'
 
 export default class TodoList extends React.Component {
   render(props) {
-    const {todos, toggleCompleted,hidingCompleted} = this.props
+    const { todos, toggleCompleted, hidingCompleted } = this.props
     return (
       <div>
         <h2>Todos:</h2>
