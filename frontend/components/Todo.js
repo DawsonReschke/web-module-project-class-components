@@ -1,10 +1,11 @@
 import React from 'react'
 
 export default class Todo extends React.Component {
-  render() {
+  render(props) {
+    const {todo} = this.props
     return (
       <div>
-        Todo
+        <p>{todo.name}</p>
       </div>
     )
   }
