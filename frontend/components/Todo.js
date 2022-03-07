@@ -2,10 +2,10 @@ import React from 'react'
 
 export default class Todo extends React.Component {
   render(props) {
-    const {todo} = this.props
+    const {todo,toggleCompleted} = this.props
     return (
       <div>
-        <p>{todo.name}</p>
+        <p style={{color: todo.completed ? "red":"black"}} onClick={()=>{toggleCompleted(todo.id)}} >{todo.name}</p>
       </div>
     )
   }

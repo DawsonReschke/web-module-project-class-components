@@ -13,7 +13,7 @@ export default class Form extends React.Component {
           />
         <input
           type={'submit'} 
-          onClick={addTodo}
+          onClick={evt =>{evt.preventDefault();addTodo()}}
           /> 
       </form>
     )
